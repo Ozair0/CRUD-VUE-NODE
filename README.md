@@ -1,4 +1,3 @@
 #Vue-Node
 
-## Vue FrontEnd
-## Node Backend
+## Vue FrontEnd ~ Node Backend
