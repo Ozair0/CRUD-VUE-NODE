@@ -1,0 +1,18 @@
+{
+    "name": "fundapp",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "start": "nodemon index.js",
+        "client": "npm run serve --prefix client",
+        "build": "npm run build --prefix client",
+        "dev": "concurrently \"npm run start\" \"npm run client\""
+    },
+    "author": "Ozair",
+    "license": "ISC",
+    "dependencies": {
+        "concurrently": "^5.1.0",
+        "express": "^4.17.1"
+    }
+}
