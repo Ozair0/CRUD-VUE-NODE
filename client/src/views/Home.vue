@@ -1,8 +1,8 @@
 <template>
-  <div class="home">
-    <ol>
-      <li v-for="(items, index) in data" v-bind:key="{index}">{{items.title}}</li>
-    </ol>
+  <div id="Home" class="container">
+    <ul style="list-style-type: none;">
+      <li v-for="todo in todos" v-bind:key="todo._id">{{todo.title}}</li>
+    </ul>
   </div>
 </template>
 
@@ -13,12 +13,12 @@ export default {
   name: "Home",
   data() {
     return {
-      data: []
+      todos: []
     };
   },
   created() {
     axios.get("/todos").then(res => {
-      this.data = res.data;
+      this.todos = res.data;
     });
   }
 };
