@@ -1,16 +1,12 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
-    <ul>
+    <ol>
       <li v-for="(items, index) in data" v-bind:key="{index}">{{items.title}}</li>
-    </ul>
+    </ol>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
 import axios from "axios";
 
 export default {
@@ -20,11 +16,8 @@ export default {
       data: []
     };
   },
-  components: {
-    HelloWorld
-  },
   created() {
-    axios.get("/hay").then(res => {
+    axios.get("/todos").then(res => {
       this.data = res.data;
     });
   }
