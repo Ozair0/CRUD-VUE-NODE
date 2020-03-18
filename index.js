@@ -15,7 +15,7 @@ app.use(bodyParser.raw());
 
 app.get("/todos", async (req, res) => {
   try {
-    const todos = await Todo.find();
+    const todos = await Todo.find().sort("completed");
     res.json(todos);
   } catch (err) {
     res.status(500).json({ message: err.message });
