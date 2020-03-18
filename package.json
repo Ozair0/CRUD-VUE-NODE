@@ -12,6 +12,7 @@
     "author": "Ozair",
     "license": "ISC",
     "dependencies": {
+        "compression": "^1.7.4",
         "concurrently": "^5.1.0",
         "express": "^4.17.1",
         "mongoose": "^5.9.5"

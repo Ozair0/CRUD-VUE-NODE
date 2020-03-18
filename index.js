@@ -4,6 +4,8 @@ const bodyParser = require("body-parser");
 const app = express();
 const mongoose = require("mongoose");
 const Todo = require("./models/todo");
+const compression = require("compression");
+app.use(compression());
 mongoose.connect("mongodb://localhost:27017/todos", { useNewUrlParser: true });
 const db = mongoose.connection;
 db.on("error", error => console.error(error));
