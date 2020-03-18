@@ -24,15 +24,6 @@ app.get("/todos", async (req, res) => {
   }
 });
 
-app.get("/todo/:id", async (req, res) => {
-  const id = req.params.id;
-  const todo = await Todo.findOne({ _id: id });
-  if (!todo) {
-    return res.status(404).send();
-  }
-  res.status(201).json(todo);
-});
-
 app.post("/todo", async (req, res) => {
   const todo = new Todo({
     title: req.body.todo
@@ -53,17 +44,6 @@ app.delete("/todo/:id", async (req, res) => {
     return res.status(404).send();
   }
   await todo.delete();
-  res.status(201).json(todo);
-});
-
-app.patch("/todo/:id", async (req, res) => {
-  const id = req.params.id;
-  const todo = await Todo.findOne({ _id: id });
-  if (!todo || !req.body.title) {
-    return res.status(404).send();
-  }
-  todo.title = req.body.title;
-  await todo.save();
   res.status(201).json(todo);
 });
 
